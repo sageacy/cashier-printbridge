@@ -9,6 +9,12 @@ using System.Drawing.Printing;
 
 namespace TPGBridge
 {
+    public static class PuppeteerConfig
+    {
+        public static bool KeepTempPDFs { get; set; } = true; // keeping the temporary PDFs is useful for debugging
+        public static string TempPDFDir { get; set; } = Path.GetTempPath(); // Temporary directory for PDFs
+    }
+
     // Note: This implementation requires the PuppeteerSharp and PDFtoPrinter NuGet packages.
     // It provides a fully self-contained, headless printing solution without external dependencies.
 
@@ -16,11 +22,23 @@ namespace TPGBridge
     {
         private readonly PrinterSpec _printer;
         private readonly ILogger<PuppeteerPrintService> _logger;
+        private readonly string _edgePath;
 
         public PuppeteerPrintService(string printerName)
         {
             _printer = PrinterSpec.getPrinterSpec(printerName) ?? throw new ArgumentException($"Printer with short name '{printerName}' not found.", nameof(printerName));
             _logger = AppLogger.CreateLogger<PuppeteerPrintService>();
+            _edgePath = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe";
+            if (!File.Exists(_edgePath))
+            {
+                _edgePath = @"C:\Program Files\Microsoft\Edge\Application\msedge.exe";
+                if (!File.Exists(_edgePath))
+                {
+                    _logger.LogError("Microsoft Edge executable not found at default paths");
+                    throw new FileNotFoundException("Microsoft Edge executable not found. Please ensure Edge is installed or specify a valid path.");
+                }
+            }
+
         }
 
         /// <summary>
@@ -37,16 +55,17 @@ namespace TPGBridge
             // 1. Merge the template to create the final HTML string
             string htmlContent = HandlebarsWrapper.Render(htmlTemplate, data);
 
-            // 2. Download the browser for Puppeteer if it's not already present.
-            _logger.LogInformation("Ensuring browser for Puppeteer is available...");
-            await new BrowserFetcher().DownloadAsync();
-
-            // 3. Launch a headless browser instance.
+            // 2. Launch a headless browser instance.
             _logger.LogInformation("Launching headless browser...");
-            await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = true });
+            var launchOptions = new LaunchOptions
+            {
+                Headless = true,
+                ExecutablePath = this._edgePath
+            };
+            await using var browser = await Puppeteer.LaunchAsync(launchOptions);
             await using var page = await browser.NewPageAsync();
 
-            // 4. Set the page content to our rendered HTML.
+            // 3. Set the page content to our rendered HTML.
             await page.SetContentAsync(htmlContent, new NavigationOptions { WaitUntil = new[] { WaitUntilNavigation.Networkidle0 } });
 
             var pdfOptions = new PdfOptions
@@ -68,43 +87,36 @@ namespace TPGBridge
                 pdfOptions.Height = $"{_printer.PrintArea.height / 100.0f}in";
             }
 
-            // Special handling for "Microsoft Print to PDF" to avoid the print dialog.
-            if (_printer.DeviceName.Equals("Microsoft Print to PDF", StringComparison.OrdinalIgnoreCase))
-            {
-                // For a PDF printer, the "end-to-end" test is successfully creating the PDF file.
-                // We can do this directly with Puppeteer, bypassing the interactive print dialog.
-                string fileName = $"Invoice-{data.GetType().GetProperty("InvoiceNumber")?.GetValue(data) ?? Guid.NewGuid()}.pdf";
-                string outputPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
+            // For all printers, generate a PDF to a temporary file first.
 
-                _logger.LogInformation("Target is a PDF printer. Generating file directly to: {OutputPath}", outputPath);
-                await page.PdfAsync(outputPath, pdfOptions);
-                _logger.LogInformation("PDF generated successfully. Skipping external print step.");
-                return; // We are done.
-            }
-
-            // 5. For physical printers, generate a PDF to a temporary file.
-            string tempPdfPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.pdf");
+            string pdfPath = Path.Combine(PuppeteerConfig.TempPDFDir, $"{Guid.NewGuid()}.pdf");
             try
             {
-                _logger.LogInformation("Generating temporary PDF at: {TempPdfPath}", tempPdfPath);
-                await page.PdfAsync(tempPdfPath, pdfOptions);
+                _logger.LogInformation("Generating temporary PDF at: {pdfPath}", pdfPath);
+                await page.PdfAsync(pdfPath, pdfOptions);
 
-                // 6. Print the generated PDF to the target printer.
-                await PrintPdfAsync(tempPdfPath, _printer.DeviceName);
+                if (_printer.DeviceName == "Microsoft Print to PDF")
+                {
+                    // Special case for Microsoft Print to PDF, which doesn't require a separate print command.
+                    _logger.LogInformation("Using Microsoft Print to PDF, no further action needed.");
+                    return;
+                }
+                // Print the generated PDF to the target printer.
+                await PrintPdfAsync(pdfPath, _printer.DeviceName);
             }
             finally
             {
-                // 7. Clean up the temporary PDF file.
-                if (File.Exists(tempPdfPath))
+                // Clean up the temporary PDF file.
+                if (!PuppeteerConfig.KeepTempPDFs && File.Exists(pdfPath))
                 {
                     try
                     {
-                        File.Delete(tempPdfPath);
+                        File.Delete(pdfPath);
                         _logger.LogInformation("Cleaned up temporary PDF file.");
                     }
                     catch (IOException ex)
                     {
-                        _logger.LogWarning(ex, "Could not delete temporary file {TempPdfPath}", tempPdfPath);
+                        _logger.LogWarning(ex, "Could not delete temporary file {TempPdfPath}", pdfPath);
                     }
                 }
             }
@@ -112,7 +124,7 @@ namespace TPGBridge
         /// <summary>
         /// Prints a PDF file to a specified printer silently using an external tool.
         /// </summary>
-        private async Task PrintPdfAsync(string pdfPath, string printerName)
+        async Task PrintPdfAsync(string pdfPath, string printerName)
         {
             _logger.LogInformation("Attempting to print '{PdfFileName}' to printer '{PrinterName}' using PDFtoPrinter...", Path.GetFileName(pdfPath), printerName);
 
@@ -127,7 +139,6 @@ namespace TPGBridge
 
                 _logger.LogInformation("Print command sent successfully to '{PrinterName}'.", printerName);
             }
-            // The InvalidPrinterException now comes from the PDFtoPrinter.Printing namespace.
             catch (InvalidPrinterException ex)
             {
                 var errorMessage = $"The printer '{printerName}' is not valid. Please check the printer name and ensure it is installed.";
