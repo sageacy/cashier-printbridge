@@ -1,13 +1,11 @@
-﻿using System;
-using System.Drawing.Printing;
-using System.Runtime.InteropServices;
-using System.ComponentModel; // Added for Win32Exception
-using System.Threading;
-using System.Windows.Forms;
+﻿﻿using System;
+using System.Threading.Tasks;
+using TPGBridge;
 
 public class Program
 {
-    public static void Main(string[] args)
+    // Main is now async to allow for 'await'.
+    public static async Task Main(string[] args)
     {
         // --- Define the Handlebars HTML Template ---
         string htmlTemplate = @"
@@ -79,19 +77,25 @@ public class Program
             Total = (2 * 150.00) + (10 * 15.50) + 45.25
         };
 
-        // --- identify the target printer
-        var printer = new RenderAndPrintHTML("PDF Check");
+        // --- CHOOSE YOUR IMPLEMENTATION ---
+        // The IPrintService interface allows us to easily switch between printing engines.
+
+        // Option 1: Puppeteer (headless, no UI, recommended)
+        IPrintService printer = new PuppeteerPrintService("PDF Check");
+
+        // Option 2: WebBrowser (shows a print dialog, legacy)
+        // IPrintService printer = new WebBrowserPrintService("PDF Check");
+
         try
         {
-            // --- render the html and print it to the atarget printer
-            printer.RenderAndPrint(htmlTemplate, invoiceData);
+            Console.WriteLine($"Using print service: {printer.GetType().Name}");
+            // --- Render the html and print it to the target printer ---
+            await printer.RenderAndPrint(htmlTemplate, invoiceData);
+            Console.WriteLine("Print job completed successfully.");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"\nERROR: Could not complete print job. {ex.Message}");
         }
-
-        // Console.WriteLine("\nPress any key to exit...");
-        // Console.ReadKey();
     }
 }
