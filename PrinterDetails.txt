@@ -1,0 +1,483 @@
+Enumerating available printers with details...
+=============================================
+Printer: OneNote (Desktop)
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   37.5
+  Top:    37.5
+  Width:  783.3333
+  Height: 1033.3334
+
+Default Resolution (DPI):
+  X (Horizontal): 600
+  Y (Vertical):   600
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=600 Y=600]
+  - [PrinterResolution X=1200 Y=1200]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Tabloid: 11" x 17"
+  - Legal: 8.5" x 14"
+  - Executive: 7.25" x 10.5"
+  - A3: 11.69" x 16.54"
+  - A4: 8.27" x 11.69"
+  - B4 (JIS): 10.12" x 14.33"
+  - B5 (JIS): 7.17" x 10.12"
+  - Envelope #10: 4.12" x 9.5"
+  - Envelope Monarch: 3.87" x 7.5"
+=============================================
+Printer: CognitiveTPG Narrow Slip
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  307.24637
+  Height: 800
+
+Default Resolution (DPI):
+  X (Horizontal): 138
+  Y (Vertical):   72
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=138 Y=72]
+
+Supported Paper Sizes:
+  - Slip 8 in: 3.07" x 8"
+  - Slip 16 in: 3.07" x 16"
+  - Slip 22 in: 3.07" x 21.98"
+  - Slip 36 in: 3.07" x 36"
+=============================================
+Printer: CognitiveTPG Receipt
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   15.841584
+  Top:    0
+  Width:  285.14853
+  Height: 800
+
+Default Resolution (DPI):
+  X (Horizontal): 202
+  Y (Vertical):   204
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=202 Y=204]
+  - [PrinterResolution X=101 Y=204]
+  - [PrinterResolution X=202 Y=68]
+  - [PrinterResolution X=101 Y=68]
+
+Supported Paper Sizes:
+  - Receipt 8 in.: 3.17" x 8"
+  - Receipt 16 in.: 3.17" x 16"
+  - Receipt 22 in.: 3.17" x 21.99"
+  - Receipt 36 in.: 3.17" x 36"
+  - Receipt 157 in.: 3.17" x 156.86"
+=============================================
+Printer: Wondershare PDFelement
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  850
+  Height: 1100
+
+Default Resolution (DPI):
+  X (Horizontal): 600
+  Y (Vertical):   600
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=72 Y=72]
+  - [PrinterResolution X=96 Y=96]
+  - [PrinterResolution X=144 Y=144]
+  - [PrinterResolution X=150 Y=150]
+  - [PrinterResolution X=300 Y=300]
+  - [PrinterResolution X=600 Y=600]
+  - [PrinterResolution X=720 Y=720]
+  - [PrinterResolution X=1200 Y=1200]
+  - [PrinterResolution X=2400 Y=2400]
+  - [PrinterResolution X=3600 Y=3600]
+  - [PrinterResolution X=4000 Y=4000]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Tabloid: 11" x 17"
+  - Ledger: 17" x 11"
+  - Legal: 8.5" x 14"
+  - A3: 11.69" x 16.54"
+  - A4: 8.27" x 11.69"
+  - A4 Small: 8.27" x 11.69"
+  - A5: 5.83" x 8.27"
+  - A2: 16.54" x 23.39"
+  - A6: 4.13" x 5.83"
+  - LetterSmall: 8.5" x 11"
+  - A0: 33.11" x 46.8"
+  - A1: 23.39" x 33.11"
+  - A7: 2.91" x 4.12"
+  - A8: 2.06" x 2.91"
+  - A9: 1.46" x 2.06"
+  - A10: 1.01" x 1.46"
+  - ISO B0: 39.37" x 55.67"
+  - ISO B1: 27.83" x 39.37"
+  - ISO B2: 19.68" x 27.83"
+  - ISO B3: 13.9" x 19.68"
+  - ISO B4: 9.85" x 13.9"
+  - ISO B5: 6.93" x 9.85"
+  - ISO B6: 4.91" x 6.93"
+  - JIS B0: 40.56" x 57.32"
+  - JIS B1: 28.67" x 40.56"
+  - JIS B2: 20.28" x 28.67"
+  - JIS B3: 14.33" x 20.28"
+  - JIS B4: 10.12" x 14.33"
+  - JIS B5: 7.17" x 10.12"
+  - JIS B6: 5.04" x 7.17"
+  - C0: 36.09" x 51.07"
+  - C1: 25.51" x 36.09"
+  - C2: 18.03" x 25.51"
+  - C3: 12.75" x 18.03"
+  - C4: 9.01" x 12.75"
+  - C5: 6.37" x 9.01"
+  - C6: 4.48" x 6.37"
+  - ARCH E: 36" x 48"
+  - ARCH D: 24" x 36"
+  - ARCH C: 18" x 24"
+  - ARCH B: 12" x 18"
+  - ARCH A: 9" x 12"
+  - FLSA: 8.5" x 13"
+  - FLSE: 8.5" x 13"
+  - HalfLetter: 5.5" x 8.5"
+  - PA4: 8.26" x 11"
+  - Oversize A2: 18.9" x 24.61"
+  - Oversize A1: 24.61" x 35.43"
+  - Oversize A0: 35.43" x 49.01"
+  - 92x92: 92" x 92"
+  - ANSI C: 17" x 22"
+  - ANSI D: 22" x 34"
+  - ANSI E: 34" x 44"
+  - ANSI F: 28" x 40"
+  - ARCH E1: 30" x 42"
+  - ARCH E2: 26" x 38"
+  - ARCH E3: 27" x 39"
+  - Screen 640x480 (VGA): 8.89" x 6.67"
+  - Screen 800x600 (SVGA): 11.11" x 8.33"
+  - Screen 1024x768 (XGA): 14.22" x 10.67"
+  - Screen 1280x1024 (SXGA): 17.78" x 14.22"
+  - TV NTSC DV 720x480: 10" x 6.67"
+  - TV NTSC D1 720x486: 10" x 6.75"
+  - TV NTSC D1 Square Pix 720x540: 10" x 7.5"
+  - TV PAL Square Pix 768x576: 10.67" x 8"
+  - TV PAL 720x576: 10" x 8"
+  - TV HDTV 1280x720: 17.78" x 10"
+  - TV HDTV 1920x1080: 26.67" x 15"
+  - PostScript Custom Page Size: 8.5" x 11"
+=============================================
+Printer: OneNote for Windows 10
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  850
+  Height: 1100
+
+Default Resolution (DPI):
+  X (Horizontal): 300
+  Y (Vertical):   300
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=300 Y=300]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - A4: 8.27" x 11.69"
+=============================================
+Printer: OneNote (Desktop) - Protected
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  850
+  Height: 1100
+
+Default Resolution (DPI):
+  X (Horizontal): 600
+  Y (Vertical):   600
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=600 Y=600]
+  - [PrinterResolution X=1200 Y=1200]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Tabloid: 11" x 17"
+  - Legal: 8.5" x 14"
+  - Statement: 5.5" x 8.5"
+  - Executive: 7.25" x 10.5"
+  - A3: 11.69" x 16.54"
+  - A4: 8.27" x 11.69"
+  - A5: 5.83" x 8.27"
+  - B4 (JIS): 10.12" x 14.33"
+  - B5 (JIS): 7.17" x 10.12"
+=============================================
+Printer: Microsoft Print to PDF
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  850
+  Height: 1100
+
+Default Resolution (DPI):
+  X (Horizontal): 600
+  Y (Vertical):   600
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=600 Y=600]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Tabloid: 11" x 17"
+  - Legal: 8.5" x 14"
+  - Statement: 5.5" x 8.5"
+  - Executive: 7.25" x 10.5"
+  - A3: 11.69" x 16.54"
+  - A4: 8.27" x 11.69"
+  - A5: 5.83" x 8.27"
+  - B4 (JIS): 10.12" x 14.33"
+  - B5 (JIS): 7.17" x 10.12"
+  - Envelope #9: 3.87" x 8.87"
+  - Envelope #10: 4.12" x 9.5"
+  - C size sheet: 17" x 22"
+  - D size sheet: 22" x 34"
+  - E size sheet: 34" x 44"
+  - Envelope DL: 4.33" x 8.66"
+  - Envelope C5: 6.38" x 9.02"
+  - Envelope C4: 9.02" x 12.76"
+  - Envelope B5: 6.93" x 9.84"
+  - Envelope Monarch: 3.87" x 7.5"
+  - Japanese Postcard: 3.94" x 5.83"
+  - Super B: 12.01" x 19.17"
+  - A2: 16.54" x 23.39"
+  - A6: 4.13" x 5.83"
+  - Japanese Envelope Kaku #2: 9.45" x 13.07"
+  - Japanese Envelope Chou #3: 4.72" x 9.25"
+  - Japanese Envelope Chou #4: 3.54" x 8.07"
+  - Japan Envelope You #4: 4.13" x 9.25"
+  - ASMEFSheet: 28" x 40"
+  - Architecture ASheet: 9" x 12"
+  - Architecture BSheet: 12" x 18"
+  - Architecture CSheet: 18" x 24"
+  - Architecture DSheet: 24" x 36"
+  - Architecture E1Sheet: 30" x 42"
+  - Architecture ESheet: 36" x 48"
+  - Business Card 2x 3 5: 2" x 3.5"
+  - Business Card 55x 85mm: 2.17" x 3.35"
+  - Business Card 55x 91mm: 2.17" x 3.58"
+  - English 14x 17: 14" x 17"
+  - English Photo L: 3.5" x 5"
+  - Japan Chou 40 Envelope: 3.54" x 8.86"
+  - Metric Photo L: 3.5" x 4.69"
+  - North America 3x 5: 3" x 5"
+  - North America 5x 8: 5" x 8"
+  - Photo 10x 12: 10" x 12"
+  - Photo 4x 4: 4" x 4"
+  - Photo 5x 5: 5" x 5"
+  - Photo 89x 89mm: 3.5" x 3.5"
+  - Credit Card: 2.13" x 3.39"
+  - ISOA0: 33.11" x 46.81"
+  - ISOA1: 23.39" x 33.11"
+  - North America 4x 6: 4" x 6"
+  - North America 5x 7: 5" x 7"
+  - North America 8x 10: 8" x 10"
+=============================================
+Printer: Fax
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   0
+  Top:    0
+  Width:  850
+  Height: 1100
+
+Default Resolution (DPI):
+  X (Horizontal): 200
+  Y (Vertical):   200
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=200 Y=200]
+  - [PrinterResolution X=200 Y=100]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Letter Small: 8.5" x 11"
+  - Legal: 8.5" x 14"
+  - Statement: 5.5" x 8.5"
+  - Executive: 7.25" x 10.5"
+  - A4: 8.27" x 11.69"
+  - A4 Small: 8.27" x 11.69"
+  - A5: 5.83" x 8.27"
+  - B5 (JIS): 7.17" x 10.12"
+  - Folio: 8.5" x 13"
+  - Quarto: 8.46" x 10.83"
+  - Note: 8.5" x 11"
+  - Envelope #9: 3.87" x 8.87"
+  - Envelope #10: 4.12" x 9.5"
+  - Envelope #11: 4.5" x 10.37"
+  - Envelope #12: 4.75" x 11"
+  - Envelope #14: 5" x 11.5"
+  - Envelope DL: 4.33" x 8.66"
+  - Envelope C5: 6.38" x 9.02"
+  - Envelope C6: 4.49" x 6.38"
+  - Envelope C65: 4.49" x 9.02"
+  - Envelope B5: 6.93" x 9.84"
+  - Envelope B6: 6.93" x 4.92"
+  - Envelope: 4.33" x 9.06"
+  - Envelope Monarch: 3.87" x 7.5"
+  - 6 3/4 Envelope: 3.62" x 6.5"
+  - German Std Fanfold: 8.5" x 12"
+  - German Legal Fanfold: 8.5" x 13"
+  - Japanese Postcard: 3.94" x 5.83"
+  - Reserved48: 0" x 0"
+  - Reserved49: 0" x 0"
+  - Letter Transverse: 8.5" x 11"
+  - A4 Transverse: 8.27" x 11.69"
+  - Letter Plus: 8.5" x 12.69"
+  - A4 Plus: 8.27" x 12.99"
+  - A5 Transverse: 5.83" x 8.27"
+  - B5 (JIS) Transverse: 7.17" x 10.12"
+  - A5 Extra: 6.85" x 9.25"
+  - B5 (ISO) Extra: 7.91" x 10.87"
+  - Japanese Double Postcard: 7.87" x 5.83"
+  - A6: 4.13" x 5.83"
+  - Japanese Envelope Kaku #3: 8.5" x 10.91"
+  - Japanese Envelope Chou #3: 4.72" x 9.25"
+  - Japanese Envelope Chou #4: 3.54" x 8.07"
+  - A5 Rotated: 8.27" x 5.83"
+  - Japanese Postcard Rotated: 5.83" x 3.94"
+  - Double Japan Postcard Rotated: 5.83" x 7.87"
+  - A6 Rotated: 5.83" x 4.13"
+  - Japan Envelope Chou #4 Rotated: 8.07" x 3.54"
+  - B6 (JIS): 5.04" x 7.17"
+  - B6 (JIS) Rotated: 7.17" x 5.04"
+  - Japan Envelope You #4: 4.13" x 9.25"
+  - PRC 16K: 7.4" x 10.24"
+  - PRC 32K: 5.12" x 7.24"
+  - PRC 32K(Big): 5.51" x 7.99"
+  - PRC Envelope #1: 4.02" x 6.5"
+  - PRC Envelope #2: 4.02" x 6.93"
+  - PRC Envelope #3: 4.92" x 6.93"
+  - PRC Envelope #4: 4.33" x 8.19"
+  - PRC Envelope #5: 4.33" x 8.66"
+  - PRC Envelope #6: 4.72" x 9.06"
+  - PRC Envelope #7: 6.3" x 9.06"
+  - PRC Envelope #8: 4.72" x 12.17"
+  - PRC 32K Rotated: 7.24" x 5.12"
+  - PRC 32K(Big) Rotated: 7.99" x 5.51"
+  - PRC Envelope #1 Rotated: 6.5" x 4.02"
+  - PRC Envelope #2 Rotated: 6.93" x 4.02"
+  - PRC Envelope #3 Rotated: 6.93" x 4.92"
+  - PRC Envelope #4 Rotated: 8.19" x 4.33"
+  - LetterSmall: 8.5" x 11"
+  - A7: 2.91" x 4.12"
+  - A8: 2.06" x 2.91"
+  - A9: 1.46" x 2.06"
+  - A10: 1.01" x 1.46"
+  - ISO B5: 6.93" x 9.85"
+  - ISO B6: 4.91" x 6.93"
+  - JIS B5: 7.17" x 10.12"
+  - JIS B6: 5.04" x 7.17"
+  - C5: 6.37" x 9.01"
+  - C6: 4.48" x 6.37"
+  - FLSA: 8.5" x 13"
+  - FLSE: 8.5" x 13"
+  - HalfLetter: 5.5" x 8.5"
+  - PA4: 8.26" x 11"
+  - Business Card 2x 3 5: 2" x 3.5"
+  - Business Card 55x 85mm: 2.17" x 3.35"
+  - Business Card 55x 91mm: 2.17" x 3.58"
+  - English Photo L: 3.5" x 5"
+  - Japan Chou 40 Envelope: 3.54" x 8.86"
+  - Metric Photo L: 3.5" x 4.69"
+  - North America 3x 5: 3" x 5"
+  - North America 5x 8: 5" x 8"
+  - Photo 4x 4: 4" x 4"
+  - Photo 5x 5: 5" x 5"
+  - Photo 89x 89mm: 3.5" x 3.5"
+  - Credit Card: 2.13" x 3.39"
+  - North America 4x 6: 4" x 6"
+  - North America 5x 7: 5" x 7"
+  - North America 8x 10: 8" x 10"
+  - Receipt 8 in.: 3.17" x 8"
+  - Slip 8 in: 3.07" x 8"
+=============================================
+Printer: AnyDesk Printer
+---------------------------------
+Printable Area (in hundredths of an inch):
+  Left:   37.5
+  Top:    37.5
+  Width:  783.3333
+  Height: 1033.3334
+
+Default Resolution (DPI):
+  X (Horizontal): 600
+  Y (Vertical):   600
+  Kind:           Custom
+
+Supported Resolutions:
+  - [PrinterResolution High]
+  - [PrinterResolution Medium]
+  - [PrinterResolution Low]
+  - [PrinterResolution Draft]
+  - [PrinterResolution X=600 Y=600]
+
+Supported Paper Sizes:
+  - Letter: 8.5" x 11"
+  - Tabloid: 11" x 17"
+  - Legal: 8.5" x 14"
+  - Executive: 7.25" x 10.5"
+  - A3: 11.69" x 16.54"
+  - A4: 8.27" x 11.69"
+  - B4 (JIS): 10.12" x 14.33"
+  - B5 (JIS): 7.17" x 10.12"
+  - Envelope #10: 4.12" x 9.5"
+  - Envelope Monarch: 3.87" x 7.5"
+=============================================
+
