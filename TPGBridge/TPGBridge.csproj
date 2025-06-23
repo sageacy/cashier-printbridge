@@ -9,7 +9,17 @@
 
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="2.1.4" />
-    <PackageReference Include="PuppeteerSharp" Version="20.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageReference Include="PDFtoPrinter" Version="1.2.0" />
+    <PackageReference Include="PuppeteerSharp" Version="18.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- These files contain obsolete, pre-refactoring code and are excluded -->
+    <!-- to prevent potential build conflicts and project clutter. -->
+    <Compile Remove="Printing-Browser.cs" />
+    <Compile Remove="Printing-Puppeteer.cs" />
   </ItemGroup>
 
 </Project>
