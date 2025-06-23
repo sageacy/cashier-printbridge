@@ -7,66 +7,6 @@ using System.Drawing.Printing;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-// PrintBox type used for printable area
-// and output rendering target
-public struct PrintBox
-{
-    public float left;
-    public float top;
-    public float width;
-    public float height;
-}
-
-public class PrinterSpec
-{
-    public string? ShortName { get; set; }  // printer device name
-    public string? DeviceName { get; set; } // printer device name
-    public float PaperWidth { get; set; }   // paper total width in inches
-    public float PaperHeight { get; set; }  // paper total height in inches
-    public PrintBox PrintArea { get; set; }
-    public uint Xdpi { get; set; }          // horizontal DPI
-    public uint Ydpi { get; set; }          // vertical DPI
-    public float Xmargin { get; set; }      // horizontal margin (size for each left & right margins) in inches)
-    public float Ymargin { get; set; }      // horizontal margin (size for each left & right margins) in inches)
-
-    public override string ToString()
-    {
-        return JsonSerializer.Serialize(this);
-    }
-
-    static PrinterSpec[] printers = new[] {
-        new PrinterSpec
-        {
-            ShortName = "A776 Check",
-            DeviceName = "CognitiveTPG Narrow Slip",
-            PrintArea = new PrintBox { left = 0f, top = 0f, width = 307.24637f, height = 600f }, // in 100ths of an inch
-            Xdpi = 138,
-            Ydpi = 72
-        },
-        new PrinterSpec
-        {
-            ShortName = "A776WS Receipt",
-            DeviceName = "CognitiveTPG Receipt",
-            PrintArea = new PrintBox { left = 15.841584f, top = 0f, width = 285.14853f, height = 3600f }, // in 100ths of an inch
-            Xdpi = 202,
-            Ydpi = 204
-        },
-        new PrinterSpec
-        {
-            ShortName = "PDF Check",
-            DeviceName = "Microsoft Print to PDF",
-            PrintArea = new PrintBox { left = 0f, top = 0f, width = 850f, height = 1100f }, // in 100ths of an inch
-            Xdpi = 600,
-            Ydpi = 600
-        }
-    };
-
-    public static PrinterSpec getPrinterSpec(string shortName)
-    {
-       return printers.First(p => string.Equals(p.ShortName, shortName, StringComparison.OrdinalIgnoreCase));
-    }
-}
-
 public class RenderAndPrintHTML
 {
     private string? _htmlContent;
@@ -105,18 +45,39 @@ public class RenderAndPrintHTML
     {
         try
         {
-            // Use a WebBrowser control to render the HTML
-            var webBrowser = new WebBrowser { ScriptErrorsSuppressed = true };
-            webBrowser.DocumentCompleted += WebBrowser_DocumentCompleted;
-            webBrowser.DocumentText = _htmlContent ?? string.Empty;
- 
-            // Application.Run() starts a message loop for the browser events to fire.
-            Application.Run();
+            // Use a hidden form to host the WebBrowser control. This provides a proper
+            // message loop and window handle, which can improve stability when the
+            // control needs to show modal dialogs (like a print dialog).
+            using (var form = new Form { Opacity = 0, ShowInTaskbar = false, WindowState = FormWindowState.Minimized })
+            {
+                form.Load += (s, e) =>
+                {
+                    try
+                    {
+                        var webBrowser = new WebBrowser { ScriptErrorsSuppressed = true, Parent = form };
+                        webBrowser.DocumentCompleted += WebBrowser_DocumentCompleted;
+                        webBrowser.DocumentText = _htmlContent ?? string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error creating WebBrowser control: {ex.Message}");
+                        // If we can't even create the browser, close the form to exit the thread.
+                        form.Close();
+                    }
+                };
+
+                // Application.Run(form) starts a message loop and shows the form (invisibly).
+                // The loop exits when form.Close() is called.
+                Application.Run(form);
+            }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error in printing thread: {ex.Message}");
-            // Ensure the main thread is released in case of an exception before the message loop runs.
+        }
+        finally
+        {
+            // Ensure the main thread is always released, regardless of success or failure.
             _mre.Set();
         }
     }
@@ -125,15 +86,17 @@ public class RenderAndPrintHTML
     {
         if (sender is not WebBrowser webBrowser) return;
 
-        // The DocumentCompleted event can fire multiple times (e.g., for frames).
-        // We only want to print once the main document is ready.
-        if (e.Url.AbsolutePath != webBrowser.Url?.AbsolutePath)
+        // The DocumentCompleted event can fire multiple times. We only want to print once.
+        if (webBrowser.Url == null || e?.Url?.AbsolutePath != webBrowser.Url.AbsolutePath)
         {
             return;
         }
 
-        // Unsubscribe to prevent the handler from running multiple times.
+        // Unsubscribe to prevent the handler from running again.
         webBrowser.DocumentCompleted -= WebBrowser_DocumentCompleted;
+
+        // We can assert that the form is not null because we explicitly parented it.
+        var parentForm = webBrowser.FindForm()!;
 
         string originalDefaultPrinter = new PrinterSettings().PrinterName;
         Console.WriteLine($"Original default printer was: '{originalDefaultPrinter}'");
@@ -151,17 +114,19 @@ public class RenderAndPrintHTML
                 throw new Win32Exception(Marshal.GetLastWin32Error());
             }
 
+            // This call should block until the user interacts with the print dialog (e.g., clicks Save/Print or Cancel).
             webBrowser.Print();
             Console.WriteLine("Print job sent to the spooler. Will clean up in a few seconds...");
 
-            // The WebBrowser.Print() method is asynchronous. We must not dispose the control
-            // or exit the thread's message loop until printing is complete. Since there's no
-            // direct event for print completion, we use a timer to delay the cleanup.
-            // This keeps the message loop running, allowing the print job to be processed.
+            // The WebBrowser.Print() method spools the job asynchronously. We must not dispose the control
+            // or exit the thread's message loop immediately, or the print job may fail.
+            // A timer is a pragmatic, if imperfect, way to allow time for spooling.
             var cleanupTimer = new System.Windows.Forms.Timer { Interval = 5000 }; // 5-second delay
             cleanupTimer.Tick += (timerSender, timerArgs) =>
             {
                 cleanupTimer.Stop();
+                cleanupTimer.Dispose();
+
                 try
                 {
                     Console.WriteLine($"Restoring default printer to: '{originalDefaultPrinter}'...");
@@ -169,10 +134,8 @@ public class RenderAndPrintHTML
                 }
                 finally
                 {
-                    webBrowser.Dispose();
-                    Application.ExitThread();
-                    _mre.Set();
-                    cleanupTimer.Dispose();
+                    // Closing the form exits the message loop on the print thread.
+                    parentForm.Close();
                 }
             };
             cleanupTimer.Start();
@@ -180,7 +143,7 @@ public class RenderAndPrintHTML
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred during printing: {ex.Message}");
-            // If an error occurs, we must clean up and exit immediately.
+            // On error, clean up and exit the thread immediately.
             try
             {
                 Console.WriteLine($"Restoring default printer to: '{originalDefaultPrinter}'...");
@@ -188,9 +151,7 @@ public class RenderAndPrintHTML
             }
             finally
             {
-                webBrowser.Dispose();
-                Application.ExitThread();
-                _mre.Set();
+                parentForm.Close();
             }
         }
     }
