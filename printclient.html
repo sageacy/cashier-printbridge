@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Print Client</title>
+</head>
+<body>
+    <h1>WebSocket Print Client</h1>
+    <button onclick="sendPrintJob()">Send Print Job</button>
+    <pre id="log"></pre>
+
+    <script>
+        function log(message) {
+            document.getElementById('log').textContent += message + '\n';
+        }
+
+        function sendPrintJob() {
+            const ws = new WebSocket('ws://localhost:5000/print');
+
+            ws.onopen = () => {
+                log('Connected to print server.');
+
+                const invoiceTemplate = `
+                    <!DOCTYPE html><html><head><title>Invoice {{InvoiceNumber}}</title>
+                    <style>
+                        body { font-family: sans-serif; } .invoice-box { max-width: 800px; margin: auto; padding: 30px; border: 1px solid #eee; }
+                        .item-table { width: 100%; border-collapse: collapse; } .item-table th, .item-table td { border-bottom: 1px solid #eee; padding: 8px; }
+                    </style></head><body><div class='invoice-box'>
+                        <h2>INVOICE</h2>
+                        <p><strong>Invoice #:</strong> {{InvoiceNumber}}<br><strong>Date:</strong> {{Date}}</p>
+                        <table class='item-table'>
+                            <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
+                            <tbody>
+                                {{#each Items}}<tr><td>{{this.Name}}</td><td>{{this.Quantity}}</td><td>{{this.Price}}</td></tr>{{/each}}
+                            </tbody>
+                        </table>
+                    </div></body></html>`;
+
+                const printJob = {
+                    printerName: "PDF Check", // Change to your desired printer short name
+                    template: invoiceTemplate,
+                    data: {
+                        InvoiceNumber: "WS-2024-001",
+                        Date: new Date().toLocaleDateString(),
+                        Items: [
+                            { Name: "Web-Requested Widget", Quantity: 5, Price: 25.00 },
+                            { Name: "API Gizmo", Quantity: 2, Price: 199.99 }
+                        ]
+                    }
+                };
+
+                log('Sending print job...');
+                ws.send(JSON.stringify(printJob));
+            };
+
+            ws.onmessage = (event) => {
+                const response = JSON.parse(event.data);
+                log('Server response: ' + JSON.stringify(response, null, 2));
+                ws.close();
+            };
+
+            ws.onerror = (error) => {
+                log('WebSocket Error: ' + error);
+                console.error('WebSocket Error:', error);
+            };
+
+            ws.onclose = () => {
+                log('Disconnected from print server.');
+            };
+        }
+    </script>
+</body>
+</html>
