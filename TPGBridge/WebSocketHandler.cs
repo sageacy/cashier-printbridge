@@ -13,9 +13,10 @@ namespace TPGBridge
     // Defines the structure of the incoming WebSocket message
     public class PrintRequest
     {
-        public string? PrinterName { get; set; }
-        public string? Template { get; set; }
-        public JsonElement Data { get; set; } // Use JsonElement to handle arbitrary JSON data
+        public string? printer { get; set; }
+        public string? hbs { get; set; }
+        public string? html { get; set; }
+        public JsonElement? data { get; set; } // Use JsonElement to handle arbitrary JSON data
     }
 
     public class WebSocketHandler
@@ -46,7 +47,7 @@ namespace TPGBridge
 
         private async Task HandleWebSocketSession(WebSocket webSocket)
         {
-            var buffer = new byte[1024 * 8]; // 8KB buffer for incoming messages
+            var buffer = new byte[32 * 1024]; // 32KB buffer for incoming messages
 
             try
             {
@@ -63,41 +64,85 @@ namespace TPGBridge
                     string message = Encoding.UTF8.GetString(buffer, 0, receiveResult.Count);
                     _logger.LogInformation("Received WebSocket message.");
 
-                    PrintRequest printRequest;
+                    PrintRequest? printRequest = null;
                     try
                     {
                         printRequest = JsonSerializer.Deserialize<PrintRequest>(message, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
                     }
                     catch (JsonException jsonEx)
                     {
-                        _logger.LogError(jsonEx, "Error deserializing print request JSON.");
-                        await SendResponseAsync(webSocket, new { success = false, message = $"Invalid JSON format: {jsonEx.Message}" });
+                        const string msg = "Error deserializing print request JSON";
+                        _logger.LogError(jsonEx, msg);
+                        await SendResponseAsync(webSocket, new { success = false, message = msg });
+                    }
+
+                    // Ensure that either 'hbs' or 'html' is provided, but not both
+                    if (!(string.IsNullOrWhiteSpace(printRequest!.hbs) ^ string.IsNullOrWhiteSpace(printRequest.html)))
+                    {
+                        await SendResponseAsync(webSocket, new { success = false, message = "Invalid print request. 'hbs' or 'html' is required." });
                         continue;
                     }
 
-                    if (string.IsNullOrWhiteSpace(printRequest.PrinterName) || string.IsNullOrWhiteSpace(printRequest.Template))
-                    {
-                        await SendResponseAsync(webSocket, new { success = false, message = "Invalid print request. 'printerName' and 'template' are required." });
-                        continue;
+                    IPrintService? printer = null;
+                    if (!string.IsNullOrWhiteSpace(printRequest.printer)) {
+                        printer = new PuppeteerPrintService(printRequest.printer);
                     }
 
-                    try
+                    if (printer == null)
                     {
-                        // Deserialize the data part into a dynamic ExpandoObject that Handlebars can use.
-                        object dataObject = JsonSerializer.Deserialize<ExpandoObject>(printRequest.Data.GetRawText())!;
-                        _logger.LogInformation("Processing print request for printer: {PrinterName}", printRequest.PrinterName);
-
-                        IPrintService printer = new PuppeteerPrintService(printRequest.PrinterName);
-                        await printer.RenderAndPrintHBS(printRequest.Template, dataObject);
-
-                        _logger.LogInformation("Print job completed successfully for printer: {PrinterName}", printRequest.PrinterName);
-                        await SendResponseAsync(webSocket, new { success = true, message = "Print job completed successfully." });
+                        await SendResponseAsync(webSocket, new { success = false, message = "Invalid printer name in request" });
+                        continue;          
                     }
-                    catch (Exception ex)
+
+
+                    // process a handelbars print request
+                    if (!string.IsNullOrWhiteSpace(printRequest.hbs))
                     {
-                        _logger.LogError(ex, "An error occurred while processing the print job for printer '{PrinterName}'.", printRequest.PrinterName);
-                        await SendResponseAsync(webSocket, new { success = false, message = $"An error occurred: {ex.Message}" });
+                        try
+                        {
+                            object? dataObject = null;
+                            if (printRequest.data.HasValue && printRequest.data.Value.ValueKind != JsonValueKind.Null)
+                            {
+                                // Safely deserialize only if data is not null
+                                dataObject = JsonSerializer.Deserialize<ExpandoObject>(printRequest.data.Value.GetRawText());
+                            }
+                            else
+                            {
+                                await SendResponseAsync(webSocket, new { success = false, message = "A data object must be provided with a handlebars template." });
+                                continue;
+                            }
+                            ;
+                            if (printRequest.data != null)
+                            {
+                                // Deserialize the data property into an ExpandoObject for Handlebars rendering
+                                dataObject = JsonSerializer.Deserialize<ExpandoObject>(printRequest.data.Value.GetRawText());
+                            }
+
+                            if (dataObject==null)
+                            {
+                                await SendResponseAsync(webSocket, new { success = false, message = "A data object must be provided with a handlebars template." });
+                                continue;
+                            }
+
+                            _logger.LogInformation("Processing print request for printer: {printer}", printRequest.printer);
+                            await printer.RenderAndPrintHBS(printRequest.hbs, dataObject);
+
+                            _logger.LogInformation("Print job completed successfully for printer: {printer}", printRequest.printer);
+                            await SendResponseAsync(webSocket, new { success = true, message = "Print job completed successfully." });
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogError(ex, "An error occurred while processing the print job for printer '{printer}'.", printRequest.printer);
+                            await SendResponseAsync(webSocket, new { success = false, message = $"An error occurred: {ex.Message}" });
+                        }
+
                     }
+                    // process a html print request
+                    else if (!string.IsNullOrWhiteSpace(printRequest.html))
+                    {
+
+                    }
+
                 }
             }
             catch (Exception ex)
