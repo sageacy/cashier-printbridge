@@ -7,6 +7,6 @@ namespace TPGBridge
         /// <summary>
         /// Merges a Handlebars template with data and prints the rendered HTML to a configured printer.
         /// </summary>
-        Task RenderAndPrint(string htmlTemplate, object data);
+        Task RenderAndPrintHBS(string htmlTemplate, object data);
     }
 }

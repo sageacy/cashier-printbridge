@@ -45,7 +45,7 @@ namespace TPGBridge
         /// Merges a Handlebars template with data, renders it to a PDF using Puppeteer,
         /// and prints it to the specified printer silently.
         /// </summary>
-        public async Task RenderAndPrint(string htmlTemplate, object data)
+        public async Task RenderAndPrintHBS(string hbs, object data)
         {
             if (string.IsNullOrEmpty(_printer.DeviceName))
             {
@@ -53,7 +53,7 @@ namespace TPGBridge
             }
 
             // 1. Merge the template to create the final HTML string
-            string htmlContent = HandlebarsWrapper.Render(htmlTemplate, data);
+            string htmlContent = HandlebarsWrapper.Render(hbs, data);
 
             // 2. Launch a headless browser instance.
             _logger.LogInformation("Launching headless browser...");
@@ -121,8 +121,9 @@ namespace TPGBridge
                 }
             }
         }
+
         /// <summary>
-        /// Prints a PDF file to a specified printer silently using an external tool.
+        /// /// Prints a PDF file to a specified printer silently using an external tool.
         /// </summary>
         async Task PrintPdfAsync(string pdfPath, string printerName)
         {
