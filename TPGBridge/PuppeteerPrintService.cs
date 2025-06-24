@@ -17,7 +17,6 @@ namespace TPGBridge
 
     // Note: This implementation requires the PuppeteerSharp and PDFtoPrinter NuGet packages.
     // It provides a fully self-contained, headless printing solution without external dependencies.
-
     public class PuppeteerPrintService : IPrintService
     {
         private readonly PrinterSpec _printer;
@@ -52,10 +51,13 @@ namespace TPGBridge
                 throw new InvalidOperationException("Target printer DeviceName is not set.");
             }
 
-            // 1. Merge the template to create the final HTML string
-            string htmlContent = HandlebarsWrapper.Render(hbs, data);
+            // Merge the template to create the final HTML string
+            string html = HandlebarsWrapper.Render(hbs, data);
+            await RenderAndPrintHTML(html);
+        }
 
-            // 2. Launch a headless browser instance.
+        public async Task RenderAndPrintHTML(string html) {
+            // Launch a headless browser instance.
             _logger.LogInformation("Launching headless browser...");
             var launchOptions = new LaunchOptions
             {
@@ -65,8 +67,8 @@ namespace TPGBridge
             await using var browser = await Puppeteer.LaunchAsync(launchOptions);
             await using var page = await browser.NewPageAsync();
 
-            // 3. Set the page content to our rendered HTML.
-            await page.SetContentAsync(htmlContent, new NavigationOptions { WaitUntil = new[] { WaitUntilNavigation.Networkidle0 } });
+            // Set the page content to our rendered HTML.
+            await page.SetContentAsync(html, new NavigationOptions { WaitUntil = new[] { WaitUntilNavigation.Networkidle0 } });
 
             var pdfOptions = new PdfOptions
             {
@@ -88,12 +90,18 @@ namespace TPGBridge
             }
 
             // For all printers, generate a PDF to a temporary file first.
-
             string pdfPath = Path.Combine(PuppeteerConfig.TempPDFDir, $"{Guid.NewGuid()}.pdf");
             try
             {
                 _logger.LogInformation("Generating temporary PDF at: {pdfPath}", pdfPath);
                 await page.PdfAsync(pdfPath, pdfOptions);
+
+                if (String.IsNullOrEmpty(_printer?.DeviceName))
+                {
+                    const string msg = "Cannot print, printer DeviceName is not set.";
+                    _logger.LogError(msg);
+                    throw new InvalidOperationException(msg);
+                }
 
                 if (_printer.DeviceName == "Microsoft Print to PDF")
                 {
@@ -120,6 +128,7 @@ namespace TPGBridge
                     }
                 }
             }
+
         }
 
         /// <summary>
