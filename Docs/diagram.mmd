@@ -1,0 +1,19 @@
+graph TB
+    subgraph Windows Workstation
+        subgraph "Oracle Service Cloud<br>Edge Browser"
+            Extension -- PrintJob --> WS1[Client WebSocket];
+        end
+
+        subgraph Bridge[TPGPrinting Bridge]
+            WS2[WebSocket Listener] --> ProcessJob{Process Print Job};
+            ProcessJob --Handlebars Job--> PrintHandlebars;
+            ProcessJob --HTML Job--> PrintHTML;
+            PrintHandlebars --HTML Job--> PrintHTML;
+            PrintHTML --HTML--> Puppeteer;
+            Puppeteer -- PDF --> PDFPrinter;
+        end
+
+        WS1 -- PrintJob --> WS2;
+    end
+
+    PDFPrinter -- USB Connection --> Printer(TPG Receipt Printer)
