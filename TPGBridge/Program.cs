@@ -20,7 +20,8 @@ public class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.UseUrls("http://localhost:5000"); // Explicitly listen on port 5000
+                // listen on loopback endpoints to prevent external connections 
+                webBuilder.UseUrls("http://127.0.0.1:5000", "http://[::1]:5000"); 
                 webBuilder.Configure(app =>
                 {
                     app.UseWebSockets(); // Enable WebSockets
