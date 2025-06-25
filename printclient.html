@@ -3,13 +3,55 @@
 <head>
     <title>WebSocket Print Client</title>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent window scrollbars */
+        }
+        #log-container {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            min-height: 50px;
+            max-height: 80vh;
+            background: #222;
+            color: #eee;
+            overflow: auto;
+            border-top: 1px solid #444;
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        #log-resize-handle {
+            height: 8px;
+            cursor: ns-resize;
+            background: #444;
+            width: 100%;
+        }
+        #log {
+            margin: 0;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            flex: 1 1 auto;
+        }
+    </style>
 </head>
 <body>
     <h1>HBS Print Job</h1>
     <button onclick="hbsPrintJob()">Send Handlebars</button>
     <h1>HTML Print Job</h1>
     <button onclick="hbsPrintJob()">Send HTML</button>
-    <pre id="log"></pre>
+    <div id="log-container">
+        <div id="log-resize-handle"></div>
+        <pre id="log"></pre>
+    </div>
     
     <script>
         const invoiceTemplate = `
@@ -81,6 +123,33 @@
                 log('Disconnected from print server.');
             };
         }
+
+        // Resizable log panel logic
+        const logContainer = document.getElementById('log-container');
+        const handle = document.getElementById('log-resize-handle');
+        let isResizing = false;
+        let startY = 0;
+        let startHeight = 0;
+
+        handle.addEventListener('mousedown', function(e) {
+            isResizing = true;
+            startY = e.clientY;
+            startHeight = logContainer.offsetHeight;
+            document.body.style.userSelect = 'none';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            const dy = startY - e.clientY;
+            let newHeight = startHeight + dy;
+            newHeight = Math.max(50, Math.min(window.innerHeight * 0.8, newHeight));
+            logContainer.style.height = newHeight + 'px';
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.userSelect = '';
+        });
     </script>
 </body>
 </html>
