@@ -1,0 +1,175 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2025-07-02 18:11:49
+count workspace : c:\Users\x2merics\Development\cashier-printbridge
+total files : 140
+total code lines : 10887
+total comment lines : 277
+total blank lines : 355
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .me|              5|              0|              4|  0.046|
+   |        .csproj|             15|              0|              3|   0.14|
+   |           .sln|             22|              0|              0|   0.20|
+   |            .cs|            786|            193|            123|    7.2|
+   |          .html|            269|              0|             13|    2.5|
+   |           .txt|            554|              0|             28|    5.1|
+   |       .targets|             10|              0|              0|  0.092|
+   |         .props|             22|              0|              0|   0.20|
+   |         .cache|            101|              0|              1|   0.93|
+   |            .md|            168|             47|             61|    1.5|
+   |          .json|           8515|              0|            101|     78|
+   |           .mmd|             16|              0|              3|   0.15|
+   |           .svg|             49|             12|              9|   0.45|
+   |           .hbs|            148|              0|              4|    1.4|
+   |           .css|            163|              2|              0|    1.5|
+   |       .Up2Date|              0|              0|              0|    0.0|
+   |  .editorconfig|             19|              0|              0|   0.17|
+   |            .js|             23|             23|              5|   0.21|
+   |               |              2|              0|              0|  0.018|
+   -------------------------------------------------------------------------
+Docs\ASCEND Cashiering Printing Bridge.docx, it is a binary file.
+Docs\check-endorse-2.html, code is 61, comment is 0, blank is 0.
+Docs\check-endorse.html, code is 65, comment is 0, blank is 1.
+Docs\CheckEndorsement.png, it is a binary file.
+Docs\diagram.md, code is 27, comment is 0, blank is 3.
+Docs\diagram.mmd, code is 16, comment is 0, blank is 3.
+Docs\PrintConfigUsage.md, code is 73, comment is 31, blank is 30.
+Docs\Printer Bridge Architecture.svg, code is 49, comment is 12, blank is 9.
+Docs\PrinterDimensions.xlsx, it is a binary file.
+Docs\Printing Bridge Technical Diagram.png, it is a binary file.
+Docs\PrintServiceComparison.md, code is 68, comment is 16, blank is 28.
+printclient.html, code is 143, comment is 0, blank is 12.
+PrinterDetails.txt, code is 455, comment is 0, blank is 28.
+read.me, code is 5, comment is 0, blank is 4.
+TPGBridge.sln, code is 22, comment is 0, blank is 0.
+TPGBridge\.gitignore, code is 2, comment is 0, blank is 0.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\cs\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\cs\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\de\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\de\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\es\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\es\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\fr\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\fr\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Handlebars.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\it\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\it\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ja\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ja\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ko\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ko\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Microsoft.Bcl.AsyncInterfaces.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Microsoft.Bcl.Cryptography.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Microsoft.Win32.Registry.AccessControl.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Microsoft.Win32.SystemEvents.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\Newtonsoft.Json.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\PDF-XChange Viewer Settings.dat, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\PDFtoPrinter.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\PDFtoPrinter_m.exe, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\pl\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\pl\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\pt-BR\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\pt-BR\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\PuppeteerSharp.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ru\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\ru\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\sni.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.CodeDom.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ComponentModel.Composition.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ComponentModel.Composition.Registration.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Configuration.ConfigurationManager.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Data.Odbc.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Data.OleDb.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Data.SqlClient.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Diagnostics.EventLog.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Diagnostics.EventLog.Messages.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Diagnostics.PerformanceCounter.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.DirectoryServices.AccountManagement.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.DirectoryServices.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.DirectoryServices.Protocols.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Drawing.Common.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Formats.Asn1.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.IO.Packaging.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.IO.Ports.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Management.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Private.ServiceModel.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Private.Windows.Core.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Reflection.Context.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Runtime.Caching.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Security.Cryptography.Pkcs.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Security.Cryptography.ProtectedData.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Security.Cryptography.Xml.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Security.Permissions.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.Duplex.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.Http.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.NetTcp.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.Primitives.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.Security.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceModel.Syndication.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.ServiceProcess.ServiceController.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Speech.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Text.Encoding.CodePages.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Threading.AccessControl.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Web.Services.Description.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\System.Windows.Extensions.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\TPGBridge.deps.json, code is 1398, comment is 0, blank is 0.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\TPGBridge.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\TPGBridge.exe, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\TPGBridge.pdb, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\TPGBridge.runtimeconfig.json, code is 23, comment is 0, blank is 0.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\tr\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\tr\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\zh-Hans\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\zh-Hans\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\zh-Hant\System.Private.ServiceModel.resources.dll, it is a binary file.
+TPGBridge\bin\Debug\net8.0-windows\win-x64\zh-Hant\System.Web.Services.Description.resources.dll, it is a binary file.
+TPGBridge\EdgePrintService.cs, code is 199, comment is 60, blank is 41.
+TPGBridge\HandlebarsWrapper.cs, code is 12, comment is 6, blank is 1.
+TPGBridge\hbs\check-endorse.hbs, code is 55, comment is 0, blank is 1.
+TPGBridge\hbs\helpers\switch-case-helpers.js, code is 23, comment is 23, blank is 5.
+TPGBridge\hbs\partials\opcoHeader-switch.hbs, code is 26, comment is 0, blank is 1.
+TPGBridge\hbs\partials\opcoHeader.hbs, code is 6, comment is 0, blank is 0.
+TPGBridge\hbs\partials\receiptFooter.hbs, code is 4, comment is 0, blank is 0.
+TPGBridge\hbs\receipt.css, code is 163, comment is 2, blank is 0.
+TPGBridge\hbs\receipt.hbs, code is 57, comment is 0, blank is 2.
+TPGBridge\IPrintService.cs, code is 8, comment is 3, blank is 1.
+TPGBridge\Logging.cs, code is 18, comment is 4, blank is 2.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs, code is 3, comment is 1, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\apphost.exe, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\ref\TPGBridge.dll, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\refint\TPGBridge.dll, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\staticwebassets.build.json, code is 11, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\staticwebassets\msbuild.build.TPGBridge.props, code is 3, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\staticwebassets\msbuild.buildMultiTargeting.TPGBridge.props, code is 3, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\staticwebassets\msbuild.buildTransitive.TPGBridge.props, code is 3, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.AssemblyInfo.cs, code is 11, comment is 9, blank is 4.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.AssemblyInfoInputs.cache, code is 1, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.assets.cache, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.csproj.AssemblyReference.cache, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.csproj.CoreCompileInputs.cache, code is 1, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.csproj.FileListAbsolute.txt, code is 99, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.csproj.Up2Date, code is 0, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.dll, it is a binary file.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.GeneratedMSBuildEditorConfig.editorconfig, code is 19, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.genruntimeconfig.cache, code is 1, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.GlobalUsings.g.cs, code is 16, comment is 1, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.MvcApplicationPartsAssemblyInfo.cache, code is 0, comment is 0, blank is 0.
+TPGBridge\obj\Debug\net8.0-windows\win-x64\TPGBridge.pdb, it is a binary file.
+TPGBridge\obj\project.assets.json, code is 6995, comment is 0, blank is 97.
+TPGBridge\obj\project.nuget.cache, code is 98, comment is 0, blank is 1.
+TPGBridge\obj\TPGBridge.csproj.nuget.dgspec.json, code is 88, comment is 0, blank is 4.
+TPGBridge\obj\TPGBridge.csproj.nuget.g.props, code is 13, comment is 0, blank is 0.
+TPGBridge\obj\TPGBridge.csproj.nuget.g.targets, code is 10, comment is 0, blank is 0.
+TPGBridge\PrintConfig.cs, code is 53, comment is 52, blank is 11.
+TPGBridge\Printing.cs, code is 89, comment is 19, blank is 11.
+TPGBridge\Program.cs, code is 118, comment is 7, blank is 13.
+TPGBridge\PuppeteerPrintService.cs, code is 122, comment is 21, blank is 18.
+TPGBridge\TPGBridge.csproj, code is 15, comment is 0, blank is 3.
+TPGBridge\WebSocketHandler.cs, code is 137, comment is 10, blank is 21.
+===============================================================================

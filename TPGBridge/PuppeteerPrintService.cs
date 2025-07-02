@@ -9,11 +9,6 @@ using System.Drawing.Printing;
 
 namespace TPGBridge
 {
-    public static class PuppeteerConfig
-    {
-        public static bool KeepTempPDFs { get; set; } = true; // keeping the temporary PDFs is useful for debugging
-        public static string TempPDFDir { get; set; } = Path.GetTempPath(); // Temporary directory for PDFs
-    }
 
     // Note: This implementation requires the PuppeteerSharp and PDFtoPrinter NuGet packages.
     // It provides a fully self-contained, headless printing solution without external dependencies.
@@ -90,7 +85,7 @@ namespace TPGBridge
             }
 
             // For all printers, generate a PDF to a temporary file first.
-            string pdfPath = Path.Combine(PuppeteerConfig.TempPDFDir, $"{Guid.NewGuid()}.pdf");
+            string pdfPath = Path.Combine(PrintConfig.TempPDFDir, $"{Guid.NewGuid()}.pdf");
             try
             {
                 _logger.LogInformation("Generating temporary PDF at: {pdfPath}", pdfPath);
@@ -115,7 +110,7 @@ namespace TPGBridge
             finally
             {
                 // Clean up the temporary PDF file.
-                if (!PuppeteerConfig.KeepTempPDFs && File.Exists(pdfPath))
+                if (!PrintConfig.KeepTempPDFs && File.Exists(pdfPath))
                 {
                     try
                     {

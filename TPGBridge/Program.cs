@@ -4,16 +4,108 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 using TPGBridge;
 
 public class Program
 {
     public static async Task Main(string[] args)
     {
+        // Parse command line arguments
+        ParseCommandLineArguments(args);
+        
         var host = CreateHostBuilder(args).Build();
+        
         Console.WriteLine("WebSocket print server starting...");
+        Console.WriteLine($"Using print service: {PrintConfig.DefaultPrintService}");
         Console.WriteLine("Listening for WebSocket connections on ws://localhost:5000/print");
+        
         await host.RunAsync();
+    }
+
+    private static void ParseCommandLineArguments(string[] args)
+    {
+        for (int i = 0; i < args.Length; i++)
+        {
+            switch (args[i].ToLowerInvariant())
+            {
+                case "--print-service":
+                case "-ps":
+                    if (i + 1 < args.Length)
+                    {
+                        if (Enum.TryParse<PrintServiceType>(args[i + 1], true, out var serviceType))
+                        {
+                            PrintConfig.DefaultPrintService = serviceType;
+                            Console.WriteLine($"Print service set to: {serviceType}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Invalid print service type: {args[i + 1]}. Valid options: Edge, Puppeteer");
+                            Environment.Exit(1);
+                        }
+                        i++; // Skip the next argument since we consumed it
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: --print-service requires a value (Edge or Puppeteer)");
+                        Environment.Exit(1);
+                    }
+                    break;
+
+                case "--keep-temp-files":
+                case "-ktf":
+                    PrintConfig.KeepAllTempFiles = true;
+                    Console.WriteLine("Temporary files will be kept for debugging");
+                    break;
+
+                case "--temp-dir":
+                case "-td":
+                    if (i + 1 < args.Length)
+                    {
+                        PrintConfig.TempDir = args[i + 1];
+                        Console.WriteLine($"Temporary directory set to: {args[i + 1]}");
+                        i++; // Skip the next argument since we consumed it
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: --temp-dir requires a directory path");
+                        Environment.Exit(1);
+                    }
+                    break;
+
+                case "--help":
+                case "-h":
+                case "/?":
+                    ShowHelp();
+                    Environment.Exit(0);
+                    break;
+
+                case string arg when arg.StartsWith("--"):
+                    Console.WriteLine($"Unknown option: {arg}");
+                    Console.WriteLine("Use --help for usage information");
+                    Environment.Exit(1);
+                    break;
+            }
+        }
+    }
+
+    private static void ShowHelp()
+    {
+        Console.WriteLine("TPGBridge - WebSocket Print Server");
+        Console.WriteLine();
+        Console.WriteLine("Usage: TPGBridge [OPTIONS]");
+        Console.WriteLine();
+        Console.WriteLine("Options:");
+        Console.WriteLine("  --print-service, -ps <type>    Set the print service type (Edge or Puppeteer)");
+        Console.WriteLine("                                  Default: Puppeteer");
+        Console.WriteLine("  --keep-temp-files, -ktf        Keep temporary files for debugging");
+        Console.WriteLine("  --temp-dir, -td <path>         Set temporary files directory");
+        Console.WriteLine("  --help, -h                     Show this help message");
+        Console.WriteLine();
+        Console.WriteLine("Examples:");
+        Console.WriteLine("  TPGBridge --print-service Edge");
+        Console.WriteLine("  TPGBridge -ps Puppeteer --keep-temp-files");
+        Console.WriteLine("  TPGBridge --temp-dir \"C:\\PrintTemp\" --print-service Edge");
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>

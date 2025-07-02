@@ -1,0 +1,1044 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\x2merics\\Development\\cashier-printbridge",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2025-07-02 18:11:49",
+            "filesum": 140,
+            "codesum": 10887,
+            "commentsum": 277,
+            "blanksum": 355,
+            "statistics": {
+                ".me": {
+                    "code": 5,
+                    "comment": 0,
+                    "blank": 4
+                },
+                ".csproj": {
+                    "code": 15,
+                    "comment": 0,
+                    "blank": 3
+                },
+                ".sln": {
+                    "code": 22,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".cs": {
+                    "code": 786,
+                    "comment": 193,
+                    "blank": 123
+                },
+                ".html": {
+                    "code": 269,
+                    "comment": 0,
+                    "blank": 13
+                },
+                ".txt": {
+                    "code": 554,
+                    "comment": 0,
+                    "blank": 28
+                },
+                ".targets": {
+                    "code": 10,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".props": {
+                    "code": 22,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".cache": {
+                    "code": 101,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".md": {
+                    "code": 168,
+                    "comment": 47,
+                    "blank": 61
+                },
+                ".json": {
+                    "code": 8515,
+                    "comment": 0,
+                    "blank": 101
+                },
+                ".mmd": {
+                    "code": 16,
+                    "comment": 0,
+                    "blank": 3
+                },
+                ".svg": {
+                    "code": 49,
+                    "comment": 12,
+                    "blank": 9
+                },
+                ".hbs": {
+                    "code": 148,
+                    "comment": 0,
+                    "blank": 4
+                },
+                ".css": {
+                    "code": 163,
+                    "comment": 2,
+                    "blank": 0
+                },
+                ".Up2Date": {
+                    "code": 0,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".editorconfig": {
+                    "code": 19,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".js": {
+                    "code": 23,
+                    "comment": 23,
+                    "blank": 5
+                },
+                "": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "filename": "Docs\\ASCEND Cashiering Printing Bridge.docx",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "Docs\\check-endorse-2.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 65,
+                    "comment": 0,
+                    "filename": "Docs\\check-endorse.html"
+                },
+                {
+                    "filename": "Docs\\CheckEndorsement.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "Docs\\diagram.md"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "Docs\\diagram.mmd"
+                },
+                {
+                    "blank": 30,
+                    "code": 73,
+                    "comment": 31,
+                    "filename": "Docs\\PrintConfigUsage.md"
+                },
+                {
+                    "blank": 9,
+                    "code": 49,
+                    "comment": 12,
+                    "filename": "Docs\\Printer Bridge Architecture.svg"
+                },
+                {
+                    "filename": "Docs\\PrinterDimensions.xlsx",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Docs\\Printing Bridge Technical Diagram.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 28,
+                    "code": 68,
+                    "comment": 16,
+                    "filename": "Docs\\PrintServiceComparison.md"
+                },
+                {
+                    "blank": 12,
+                    "code": 143,
+                    "comment": 0,
+                    "filename": "printclient.html"
+                },
+                {
+                    "blank": 28,
+                    "code": 455,
+                    "comment": 0,
+                    "filename": "PrinterDetails.txt"
+                },
+                {
+                    "blank": 4,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "read.me"
+                },
+                {
+                    "blank": 0,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "TPGBridge.sln"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "TPGBridge\\.gitignore"
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\cs\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\cs\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\de\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\de\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\es\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\es\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\fr\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\fr\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Handlebars.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\it\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\it\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ja\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ja\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ko\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ko\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Microsoft.Bcl.AsyncInterfaces.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Microsoft.Bcl.Cryptography.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Microsoft.Win32.Registry.AccessControl.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Microsoft.Win32.SystemEvents.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\Newtonsoft.Json.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\PDF-XChange Viewer Settings.dat",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\PDFtoPrinter.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\PDFtoPrinter_m.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\pl\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\pl\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\pt-BR\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\pt-BR\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\PuppeteerSharp.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ru\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\ru\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\sni.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.CodeDom.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ComponentModel.Composition.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ComponentModel.Composition.Registration.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Configuration.ConfigurationManager.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Data.Odbc.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Data.OleDb.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Diagnostics.EventLog.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Diagnostics.EventLog.Messages.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Diagnostics.PerformanceCounter.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.DirectoryServices.AccountManagement.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.DirectoryServices.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.DirectoryServices.Protocols.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Drawing.Common.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Formats.Asn1.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.IO.Packaging.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.IO.Ports.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Management.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Private.ServiceModel.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Private.Windows.Core.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Reflection.Context.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Runtime.Caching.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Security.Cryptography.Pkcs.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Security.Cryptography.ProtectedData.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Security.Cryptography.Xml.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Security.Permissions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.Duplex.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.Http.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.NetTcp.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.Primitives.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.Security.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceModel.Syndication.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.ServiceProcess.ServiceController.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Speech.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Text.Encoding.CodePages.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Threading.AccessControl.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Web.Services.Description.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\System.Windows.Extensions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1398,
+                    "comment": 0,
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\TPGBridge.deps.json"
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\TPGBridge.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\TPGBridge.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\TPGBridge.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\TPGBridge.runtimeconfig.json"
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\tr\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\tr\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\zh-Hans\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\zh-Hans\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\zh-Hant\\System.Private.ServiceModel.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\bin\\Debug\\net8.0-windows\\win-x64\\zh-Hant\\System.Web.Services.Description.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 41,
+                    "code": 199,
+                    "comment": 60,
+                    "filename": "TPGBridge\\EdgePrintService.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 6,
+                    "filename": "TPGBridge\\HandlebarsWrapper.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 55,
+                    "comment": 0,
+                    "filename": "TPGBridge\\hbs\\check-endorse.hbs"
+                },
+                {
+                    "blank": 5,
+                    "code": 23,
+                    "comment": 23,
+                    "filename": "TPGBridge\\hbs\\helpers\\switch-case-helpers.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "TPGBridge\\hbs\\partials\\opcoHeader-switch.hbs"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "TPGBridge\\hbs\\partials\\opcoHeader.hbs"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "TPGBridge\\hbs\\partials\\receiptFooter.hbs"
+                },
+                {
+                    "blank": 0,
+                    "code": 163,
+                    "comment": 2,
+                    "filename": "TPGBridge\\hbs\\receipt.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "TPGBridge\\hbs\\receipt.hbs"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "TPGBridge\\IPrintService.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 4,
+                    "filename": "TPGBridge\\Logging.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs"
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\apphost.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\ref\\TPGBridge.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\refint\\TPGBridge.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\staticwebassets.build.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\staticwebassets\\msbuild.build.TPGBridge.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.TPGBridge.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\staticwebassets\\msbuild.buildTransitive.TPGBridge.props"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 9,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.AssemblyInfo.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.AssemblyInfoInputs.cache"
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.assets.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.csproj.AssemblyReference.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.csproj.CoreCompileInputs.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 99,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.csproj.FileListAbsolute.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.csproj.Up2Date"
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.GeneratedMSBuildEditorConfig.editorconfig"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.genruntimeconfig.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.GlobalUsings.g.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.MvcApplicationPartsAssemblyInfo.cache"
+                },
+                {
+                    "filename": "TPGBridge\\obj\\Debug\\net8.0-windows\\win-x64\\TPGBridge.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 97,
+                    "code": 6995,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\project.assets.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 98,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\project.nuget.cache"
+                },
+                {
+                    "blank": 4,
+                    "code": 88,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\TPGBridge.csproj.nuget.dgspec.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\TPGBridge.csproj.nuget.g.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "TPGBridge\\obj\\TPGBridge.csproj.nuget.g.targets"
+                },
+                {
+                    "blank": 11,
+                    "code": 53,
+                    "comment": 52,
+                    "filename": "TPGBridge\\PrintConfig.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 89,
+                    "comment": 19,
+                    "filename": "TPGBridge\\Printing.cs"
+                },
+                {
+                    "blank": 13,
+                    "code": 118,
+                    "comment": 7,
+                    "filename": "TPGBridge\\Program.cs"
+                },
+                {
+                    "blank": 18,
+                    "code": 122,
+                    "comment": 21,
+                    "filename": "TPGBridge\\PuppeteerPrintService.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "TPGBridge\\TPGBridge.csproj"
+                },
+                {
+                    "blank": 21,
+                    "code": 137,
+                    "comment": 10,
+                    "filename": "TPGBridge\\WebSocketHandler.cs"
+                }
+            ]
+        }
+    ]
+}

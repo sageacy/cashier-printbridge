@@ -85,7 +85,7 @@ namespace TPGBridge
 
                     IPrintService? printer = null;
                     if (!string.IsNullOrWhiteSpace(printRequest.printer)) {
-                        printer = new PuppeteerPrintService(printRequest.printer);
+                        printer = PrintConfig.CreatePrintService(printRequest.printer);
                     }
 
                     if (printer == null)
