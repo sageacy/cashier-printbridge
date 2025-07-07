@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebSocket Print Client</title>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+    <title>Printer Bridge Client Example</title>
     <style>
         html, body {
             height: 100%;
@@ -44,10 +43,8 @@
     </style>
 </head>
 <body>
-    <h1>HBS Print Job</h1>
-    <button onclick="hbsPrintJob()">Send Handlebars</button>
-    <h1>HTML Print Job</h1>
-    <button onclick="hbsPrintJob()">Send HTML</button>
+    <h1>Endorse Check</h1>
+    <button onclick="endorseCheck()">Send HTML</button>
     <div id="log-container">
         <div id="log-resize-handle"></div>
         <pre id="log"></pre>
@@ -116,25 +113,16 @@
     </div>s
 </body>s
 </html>`
+
         function log(message) {
             document.getElementById('log').textContent += message + '\n';
         }
 
-        <!-- function hbsPrintJob() {
+        function endorseCheck() {
             const printJob = {
-                printer: "PDF Check", // Change to your desired printer short name
-                hbs: invoiceTemplate,
-                data: data
+                printer: "CognitiveTPG Narrow Slip", // printer device name
+                html: endorseCheck
             };
-            sendPrintJob(printJob);
-        } -->
-
-        function htmlPrintJob() {
-            const printJob = {
-                printer: "PDF Check", // Change to your desired printer short name
-                html: 
-            };
-
             sendPrintJob(printJob);
         }
 
@@ -161,7 +149,7 @@
             };
         }
 
-        // Resizable log panel logic
+        // JavaScript for resizeable logging panel at bottom of web
         const logContainer = document.getElementById('log-container');
         const handle = document.getElementById('log-resize-handle');
         let isResizing = false;
