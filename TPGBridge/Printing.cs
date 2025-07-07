@@ -16,7 +16,6 @@ namespace TPGBridge
 
     public class PrinterSpec
     {
-        public string? ShortName { get; set; }  // printer device name
         public string? DeviceName { get; set; } // printer device name
         public float PaperWidth { get; set; }   // paper total width in inches
         public float PaperHeight { get; set; }  // paper total height in inches
@@ -34,7 +33,6 @@ namespace TPGBridge
         static readonly PrinterSpec[] printers = new[] {
             new PrinterSpec
             {
-                ShortName = "A776 Check",
                 DeviceName = "CognitiveTPG Narrow Slip",
                 PrintArea = new PrintBox { left = 0f, top = 0f, width = 307.24637f, height = 600f }, // in 100ths of an inch
                 Xdpi = 138,
@@ -42,7 +40,6 @@ namespace TPGBridge
             },
             new PrinterSpec
             {
-                ShortName = "A776WS Receipt",
                 DeviceName = "CognitiveTPG Receipt",
                 PrintArea = new PrintBox { left = 15.841584f, top = 0f, width = 285.14853f, height = 3600f }, // in 100ths of an inch
                 Xdpi = 202,
@@ -50,7 +47,6 @@ namespace TPGBridge
             },
             new PrinterSpec
             {
-                ShortName = "PDF Check",
                 DeviceName = "Microsoft Print to PDF",
                 PaperWidth = 8.5f,
                 PaperHeight = 11f,
@@ -64,10 +60,10 @@ namespace TPGBridge
         /// Finds a printer specification by its short name.
         /// </summary>
         /// <returns>A PrinterSpec object if found; otherwise, null.</returns>
-        public static PrinterSpec? getPrinterSpec(string shortName)
+        public static PrinterSpec? getPrinterSpec(string deviceName)
         {
             // Use FirstOrDefault for safety. It returns null if no match is found.
-            return printers.FirstOrDefault(p => string.Equals(p.ShortName, shortName, StringComparison.OrdinalIgnoreCase));
+            return printers.FirstOrDefault(p => string.Equals(p.deviceName, deviceName, StringComparison.OrdinalIgnoreCase));
         }
     }
 
