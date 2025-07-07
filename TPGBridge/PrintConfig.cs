@@ -8,12 +8,13 @@ namespace TPGBridge
     public enum PrintServiceType
     {
         /// <summary>
-        /// Use PuppeteerPrintService for printing (generates PDF via Puppeteer, then prints).
+        /// Puppeteer-based HTML to PDF rendering
+        /// NOTE: Removed from implementation!!!
         /// </summary>
-        Puppeteer,
+//      Puppeteer,
         
         /// <summary>
-        /// Use EdgePrintService for printing (prints HTML directly via Microsoft Edge).
+        /// Microsoft Edge-based HTML to PDF rendering
         /// </summary>
         Edge
     }
@@ -91,24 +92,8 @@ namespace TPGBridge
             return DefaultPrintService switch
             {
                 PrintServiceType.Edge => new EdgePrintService(printerName),
-                PrintServiceType.Puppeteer => new PuppeteerPrintService(printerName),
+                // PrintServiceType.Puppeteer => new PuppeteerPrintService(printerName),
                 _ => throw new InvalidOperationException($"Unsupported print service type: {DefaultPrintService}")
-            };
-        }
-
-        /// <summary>
-        /// Creates an instance of the specified print service implementation.
-        /// </summary>
-        /// <param name="printerName">The name of the printer to use.</param>
-        /// <param name="serviceType">The specific print service type to create.</param>
-        /// <returns>An IPrintService instance of the specified type.</returns>
-        public static IPrintService CreatePrintService(string printerName, PrintServiceType serviceType)
-        {
-            return serviceType switch
-            {
-                PrintServiceType.Edge => new EdgePrintService(printerName),
-                PrintServiceType.Puppeteer => new PuppeteerPrintService(printerName),
-                _ => throw new InvalidOperationException($"Unsupported print service type: {serviceType}")
             };
         }
     }

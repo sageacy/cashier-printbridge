@@ -5,26 +5,25 @@
             margin: 20px;
             width: 576px; /* Sets the width of the HTML element */
             height: 1224px; /* Sets the height of the HTML element */
+            /* border: 2px dashed green; */ /* For visualization - debug only */
             overflow: auto; /* Important if content will exceed this */
         }
-
         body {
             font-family: Arial, sans-serif;
             font-size: 28px;
             color: #000;
-            margin: 0; /* Remove body margin to allow content to fill html */
+            margin: 40px;
+        }
+        p {
+            line-height: 1.6;
         }
         .check {
-            border: 2px dashed greens; /* For visualization - debug only */
-            background-color: hsl(120, 40%, 90%);
-            /* Set width and height to 100% to fill the parent (body) */
+            /* background-color: hsl(120, 40%, 90%); */
+            /* Set width and height to 100% to fill thes parent (body) */
             width: 100%;
             height: 100%;
             /* Add padding to the .check div itself if you want internal spacing */
             padding: 40px; /* This will reintroduce the visual spacing you had with body margin */
-        }
-        p {
-            line-height: 1.6;
         }
         .center {
             text-align: center;
@@ -39,7 +38,7 @@
             display: flex;
             justify-content: space-between;
         }
-    </style>
+   </style>
 </head>
 <body>
     <div class="check">
@@ -54,13 +53,9 @@
             <span class="right">Tender Ctrl: 1276xx</span>
         </div>
         <div class="line">
-            <span class="left">Tran: 29</span>
             <span class="right">Pmt Event Id: 0970xxx</span>
-        </div>
-        <br><div class="line">
-            <span class="left">Check</span>
             <span class="right">$144.60</span>
         </div>
-    </div>
+    </div>s
 </body>
 </html>

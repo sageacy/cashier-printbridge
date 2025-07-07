@@ -43,20 +43,20 @@ public class Program
                         }
                         else
                         {
-                            Console.WriteLine($"Invalid print service type: {args[i + 1]}. Valid options: Edge, Puppeteer");
+                            Console.WriteLine($"Invalid print service type: {args[i + 1]}. Currently only Edge supported");
                             Environment.Exit(1);
                         }
                         i++; // Skip the next argument since we consumed it
                     }
                     else
                     {
-                        Console.WriteLine("Error: --print-service requires a value (Edge or Puppeteer)");
+                        Console.WriteLine("Error: --print-service requires a value. Currently only Edge supported");
                         Environment.Exit(1);
                     }
                     break;
 
                 case "--keep-temp-files":
-                case "-ktf":
+                case "-kt":
                     PrintConfig.KeepAllTempFiles = true;
                     Console.WriteLine("Temporary files will be kept for debugging");
                     break;
@@ -99,16 +99,19 @@ public class Program
         Console.WriteLine("Usage: TPGBridge [OPTIONS]");
         Console.WriteLine();
         Console.WriteLine("Options:");
-        Console.WriteLine("  --print-service, -ps <type>    Set the print service type (Edge or Puppeteer)");
-        Console.WriteLine("                                  Default: Edge");
+        /* Disabling the --print-service command-line option as currently only supporting edge
+                Console.WriteLine("  --print-service, -ps <type>    Set the print service type (Edge or Puppeteer");
+                Console.WriteLine("                                  Default: Edge");
+        */
+
         Console.WriteLine("  --keep-temp-files, -ktf        Keep temporary files for debugging");
         Console.WriteLine("  --temp-dir, -td <path>         Set temporary files directory");
         Console.WriteLine("  --help, -h                     Show this help message");
         Console.WriteLine();
         Console.WriteLine("Examples:");
-        Console.WriteLine("  TPGBridge --print-service Edge");
-        Console.WriteLine("  TPGBridge -ps Puppeteer --keep-temp-files");
-        Console.WriteLine("  TPGBridge --temp-dir \"C:\\PrintTemp\" --print-service Edge");
+        // Console.WriteLine("  TPGBridge --print-service Edge");
+        // Console.WriteLine("  TPGBridge -ps Puppeteer --keep-temp-files");
+        Console.WriteLine("  TPGBridge --temp-dir \"C:\\PrintTemp\" --keep-temp-files ");
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>

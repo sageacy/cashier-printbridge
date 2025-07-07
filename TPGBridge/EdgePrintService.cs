@@ -50,21 +50,6 @@ namespace TPGBridge
             throw new FileNotFoundException("Microsoft Edge executable not found. Please ensure Edge is installed.");
         }
 
-        /// <summary>
-        /// Merges a Handlebars template with data, renders it to HTML,
-        /// and prints it directly using Microsoft Edge.
-        /// </summary>
-        public async Task RenderAndPrintHBS(string hbs, object data)
-        {
-            if (string.IsNullOrEmpty(_printer.DeviceName))
-            {
-                throw new InvalidOperationException("Target printer DeviceName is not set.");
-            }
-
-            // Merge the template to create the final HTML string
-            string html = HandlebarsWrapper.Render(hbs, data);
-            await RenderAndPrintHTML(html);
-        }
 
         /// <summary>
         /// Prints HTML content directly using Microsoft Edge.

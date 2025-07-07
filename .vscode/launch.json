@@ -27,16 +27,6 @@
             "stopAtEntry": false
         },
         {
-            "name": "Debug Printer Bridge (Puppeteer Print Service)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
-            "args": ["--print-service", "Puppeteer"],
-            "cwd": "${workspaceFolder}/TPGBridge",
-            "console": "integratedTerminal",
-            "stopAtEntry": false
-        },
-        {
             "name": "Debug Printer Bridge (Keep Temp Files)",
             "type": "coreclr",
             "request": "launch",

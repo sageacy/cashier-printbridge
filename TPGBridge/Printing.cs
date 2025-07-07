@@ -1,7 +1,5 @@
-using System;
 using System.Drawing.Printing;
 using System.Text;
-using System.Linq;
 using System.Text.Json;
 
 namespace TPGBridge
@@ -57,13 +55,13 @@ namespace TPGBridge
         };
 
         /// <summary>
-        /// Finds a printer specification by its short name.
+        /// Gets a PrinterSpec for a named printer
         /// </summary>
-        /// <returns>A PrinterSpec object if found; otherwise, null.</returns>
+        /// <returns>PrinterSpec object if found; otherwise, null.</returns>
         public static PrinterSpec? getPrinterSpec(string deviceName)
         {
             // Use FirstOrDefault for safety. It returns null if no match is found.
-            return printers.FirstOrDefault(p => string.Equals(p.deviceName, deviceName, StringComparison.OrdinalIgnoreCase));
+            return printers.FirstOrDefault(p => string.Equals(p.DeviceName, deviceName, StringComparison.OrdinalIgnoreCase));
         }
     }
 

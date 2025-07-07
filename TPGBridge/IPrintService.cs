@@ -5,8 +5,8 @@ namespace TPGBridge
     public interface IPrintService
     {
         /// <summary>
-        /// Merges a Handlebars template with data and prints the rendered HTML to a configured printer.
+        /// Renders HTML content and sends it to the configured printer.
         /// </summary>
-        Task RenderAndPrintHBS(string htmlTemplate, object data);
+        Task RenderAndPrintHTML(string html);
     }
 }
