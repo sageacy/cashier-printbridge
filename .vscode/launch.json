@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Printer Bridge",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/TPGBridge",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "debugWithChrome",
+                "pattern": "Listening for WebSocket connections on (ws://[^\\s]+)",
+                "uriFormat": "%s"
+            }
+        },
+        {
+            "name": "Debug Printer Bridge (Edge Print Service)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
+            "args": ["--print-service", "Edge"],
+            "cwd": "${workspaceFolder}/TPGBridge",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Debug Printer Bridge (Puppeteer Print Service)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
+            "args": ["--print-service", "Puppeteer"],
+            "cwd": "${workspaceFolder}/TPGBridge",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Debug Printer Bridge (Keep Temp Files)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
+            "args": ["--keep-temp-files", "--temp-dir", "C:\\Users\\x2merics\\AppData\\Local\\Temp"],
+            "cwd": "${workspaceFolder}/TPGBridge",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Debug TPGBridge (Custom Args)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/TPGBridge/bin/Debug/net8.0-windows/win-x64/TPGBridge.exe",
+            "args": ["--print-service", "Edge", "--keep-temp-files"],
+            "cwd": "${workspaceFolder}/TPGBridge",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        }
+    ]
+}
