@@ -54,48 +54,85 @@
     </div>
     
     <script>
-        const invoiceTemplate = `
-            <!DOCTYPE html><html><head><title>Invoice {{InvoiceNumber}}</title>
-            <style>
-                body { font-family: sans-serif; } .invoice-box { max-width: 800px; margin: auto; padding: 30px; border: 1px solid #eee; }
-                .item-table { width: 100%; border-collapse: collapse; } .item-table th, .item-table td { border-bottom: 1px solid #eee; padding: 8px; }
-            </style></head><body><div class='invoice-box'>
-                <h2>INVOICE</h2>
-                <p><strong>Invoice #:</strong> {{InvoiceNumber}}<br><strong>Date:</strong> {{Date}}</p>
-                <table class='item-table'>
-                    <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
-                    <tbody>
-                        {{#each Items}}<tr><td>{{this.Name}}</td><td>{{this.Quantity}}</td><td>{{this.Price}}</td></tr>{{/each}}
-                    </tbody>
-                </table>
-            </div></body></html>`;
-        const compiledHBS = Handlebars.compile(invoiceTemplate);
-        const data = {
-        InvoiceNumber: "WS-2024-001",
-        Date: new Date().toLocaleDateString(),
-        Items: [
-            { Name: "Web-Requested Widget", Quantity: 5, Price: 25.00 },
-            { Name: "API Gizmo", Quantity: 2, Price: 199.99 }
-        ]
-    }
-
+        const endorseCheck =
+`<html>
+<head>
+    <style>
+        html {
+            margin: 20px;
+            width: 576px; /* Sets the width of the HTML element */
+            height: 1224px; /* Sets the height of the HTML element */
+            border: 2px dashed green; /* For visualization - debug only */
+            overflow: auto; /* Important if content will exceed this */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            color: #000;
+            margin: 40px;s
+        }
+        p {
+            line-height: 1.6;
+        }
+        .check {
+            background-color: hsl(120, 40%, 90%);
+            /* Set width and height to 100% to fill thes parent (body) */
+            width: 100%;
+            height: 100%;
+            /* Add padding to the .check div itself if you want internal spacing */
+            padding: 40px; /* This will reintroduce the visual spacing you had with body margin */
+        }
+        .center {
+            text-align: center;
+        }
+        .left {
+            text-align: left;
+        }
+        .right {
+            text-align: right;
+        }
+        .line {
+            display: flex;
+            justify-content: space-between;
+        }
+   V </style>
+</head>
+<body>
+    <div class="check">
+        <div class="center" style="font-weight: bold">FOR DEPOSIT ONLY</div>
+        <div class="center">Mississippi Power Company</div>
+        <div class="line">
+            <span class="left">Office: 1111</span>
+            <span class="right">1/31/25 2:26 PM</span>
+        </div>
+        <div class="line">
+            <span class="left">Acct: 218414xxx</span>
+            <span class="right">Tender Ctrl: 1276xx</span>
+        </div>
+        <div class="line">
+            <span class="right">Pmt Event Id: 0970xxx</span>
+            <span class="right">$144.60</span>
+        </div>
+    </div>s
+</body>s
+</html>`
         function log(message) {
             document.getElementById('log').textContent += message + '\n';
         }
 
-        function hbsPrintJob() {
+        <!-- function hbsPrintJob() {
             const printJob = {
                 printer: "PDF Check", // Change to your desired printer short name
                 hbs: invoiceTemplate,
                 data: data
             };
             sendPrintJob(printJob);
-        }
+        } -->
 
         function htmlPrintJob() {
             const printJob = {
                 printer: "PDF Check", // Change to your desired printer short name
-                html: compiledHBS(data) // Use compiled HBS template with data
+                html: 
             };
 
             sendPrintJob(printJob);
