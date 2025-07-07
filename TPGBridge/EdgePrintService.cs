@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 
 namespace TPGBridge
 {
-
     /// <summary>
     /// Print service implementation that uses Microsoft Edge directly for printing HTML content.
     /// This implementation launches Edge with command-line arguments to print HTML files
@@ -82,11 +81,12 @@ namespace TPGBridge
 
             // Create a temporary HTML file
             string htmlPath = Path.Combine(PrintConfig.TempHtmlDir, $"{Guid.NewGuid()}.html");
-            
             try
             {
                 // Enhance the HTML with print-specific CSS and meta tags
-                string enhancedHtml = EnhanceHtmlForPrinting(html);
+// TODO figure out how to make this work with arbitrary HTML passed to the service, or if we need it.ss
+                // string enhancedHtml = EnhanceHtmlForPrinting(html);
+                string enhancedHtml = html;
                 
                 _logger.LogInformation("Creating temporary HTML file at: {HtmlPath}", htmlPath);
                 await File.WriteAllTextAsync(htmlPath, enhancedHtml);

@@ -11,6 +11,9 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
+        // Set Edge as the default print service
+        PrintConfig.DefaultPrintService = PrintServiceType.Edge;
+        
         // Parse command line arguments
         ParseCommandLineArguments(args);
         
@@ -97,7 +100,7 @@ public class Program
         Console.WriteLine();
         Console.WriteLine("Options:");
         Console.WriteLine("  --print-service, -ps <type>    Set the print service type (Edge or Puppeteer)");
-        Console.WriteLine("                                  Default: Puppeteer");
+        Console.WriteLine("                                  Default: Edge");
         Console.WriteLine("  --keep-temp-files, -ktf        Keep temporary files for debugging");
         Console.WriteLine("  --temp-dir, -td <path>         Set temporary files directory");
         Console.WriteLine("  --help, -h                     Show this help message");

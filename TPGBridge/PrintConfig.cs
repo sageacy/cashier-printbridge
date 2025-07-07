@@ -25,9 +25,9 @@ namespace TPGBridge
     {
         /// <summary>
         /// Gets or sets the default print service implementation to use.
-        /// Defaults to Puppeteer for backward compatibility.
+        /// Defaults to Edge.
         /// </summary>
-        public static PrintServiceType DefaultPrintService { get; set; } = PrintServiceType.Puppeteer;
+        public static PrintServiceType DefaultPrintService { get; set; } = PrintServiceType.Edge;
 
         /// <summary>
         /// Gets or sets whether to keep temporary PDF files generated during printing.
